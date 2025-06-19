@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CipherGuard - About Us</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base styles for a dark, hacker-type theme */
+        body {
+            font-family: 'Roboto Mono', monospace; /* Monospaced font for a code-like feel */
+            max-width: 1400px; /* Increased max-width for higher resolution feel */
+            margin: 40px auto;
+            padding: 30px;
+            background-color: #1a1a1a; /* Dark background */
+            color: #00ff00; /* Classic hacker green text */
+            border: 1px solid #00ff00; /* Green border */
+            border-radius: 12px;
+            box-shadow: 0 0 25px rgba(0, 255, 0, 0.4); /* Glowing green shadow */
+            line-height: 1.6;
+
+            /* Scrollbar hiding styles */
+            &::-webkit-scrollbar { width: 0px; height: 0px; background: transparent; }
+            &::-webkit-scrollbar-thumb { background: transparent; }
+            scrollbar-width: none;
+            scrollbar-color: transparent transparent;
+            -ms-overflow-style: none;
+        }
+
+        /* Navbar styles */
+        nav {
+            background-color: #0d0d0d; /* Even darker for nav */
+            padding: 15px 0;
+            border-bottom: 1px solid #00ff00;
+            margin-bottom: 30px;
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
+            border-radius: 8px; /* Slightly rounded nav bar */
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            gap: 30px; /* Space between nav items */
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+        }
+
+        nav ul li a {
+            color: #00ffff; /* Cyan for nav links */
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.15em;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav ul li a:hover,
+        nav ul li a.active { /* 'active' class for the current page */
+            background-color: #003333; /* Darker green background on hover/active */
+            color: #00ff00; /* Green text on hover/active */
+            text-shadow: 0 0 8px rgba(0, 255, 0, 0.8); /* Stronger green glow */
+        }
+        
+        /* Headings */
+        h1, h2 {
+            color: #00ffff; /* Cyan for headings, stands out */
+            text-align: center;
+            margin-bottom: 35px;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.6); /* Cyan glow */
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        h1 {
+            font-size: 2.8em;
+        }
+        h2 {
+            font-size: 2em;
+            border-bottom: 2px solid #00ff00;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+        }
+
+        /* Section styling */
+        .section {
+            margin-bottom: 40px;
+            padding: 25px;
+            border: 1px solid #008800; /* Darker green border */
+            border-radius: 10px;
+            background-color: #222222; /* Slightly lighter dark background for sections */
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.2); /* Subtle green shadow */
+        }
+
+        /* Labels */
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #00ff00; /* Green labels */
+            font-size: 1.1em;
+        }
+
+        /* Input fields and textarea */
+        input[type="file"], textarea, input[type="password"] {
+            display: block;
+            margin-bottom: 20px;
+            width: calc(100% - 24px); /* Adjusted width for padding */
+            padding: 12px;
+            border: 1px solid #008800; /* Green border */
+            border-radius: 6px;
+            font-size: 1rem;
+            box-sizing: border-box;
+            background-color: #333333; /* Darker input background */
+            color: #00ff00; /* Green text in inputs */
+            caret-color: #00ff00; /* Green cursor */
+        }
+        input[type="file"]::file-selector-button {
+            background-color: #006600;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        input[type="file"]::file-selector-button:hover {
+            background-color: #009900;
+        }
+
+        textarea {
+            resize: none; /* User cannot resize the textarea */
+        }
+
+        /* Buttons */
+        button {
+            background-color: #00aaff; /* Blue for primary actions, contrasting with green */
+            color: white;
+            padding: 14px 25px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            font-weight: bold;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 0 10px rgba(0, 170, 255, 0.4); /* Blue glow */
+        }
+        button:hover {
+            background-color: #0077cc; /* Darker blue on hover */
+            box-shadow: 0 0 20px rgba(0, 170, 255, 0.8); /* Stronger blue glow on hover */
+        }
+        button:disabled {
+            background-color: #555;
+            cursor: not-allowed;
+            box-shadow: none;
+        }
+
+        /* Image display (if you add them) */
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 25px;
+            border: 2px solid #00ff00; /* Green border around images */
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
+            display: block; /* Ensures image takes its own line */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Extracted message display */
+        #extractedMessage {
+            white-space: pre-wrap;
+            background-color: #2a2a2a; /* Dark background for message display */
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-family: 'Roboto Mono', monospace;
+            font-size: 1rem;
+            color: #00ff00; /* Green text for extracted message */
+            border: 1px solid #008800;
+            box-shadow: inset 0 0 10px rgba(0, 255, 0, 0.1); /* Inner shadow for depth */
+            min-height: 100px; /* Ensure it's visible even when empty */
+            overflow-x: auto; /* Allow horizontal scrolling if message is too long */
+        }
+
+        /* Messages: Error, Success, Info */
+        .error-message {
+            color: #ff3333; /* Red for errors */
+            margin-top: 12px;
+            font-weight: bold;
+            font-size: 1.05em;
+            text-shadow: 0 0 5px rgba(255, 51, 51, 0.6);
+        }
+        .success-message {
+            color: #33ff33; /* Bright green for success */
+            margin-top: 12px;
+            font-weight: bold;
+            font-size: 1.05em;
+            text-shadow: 0 0 5px rgba(51, 255, 51, 0.6);
+        }
+        p {
+            font-size: 0.95em;
+            color: #aaa; /* Lighter grey for notes */
+            margin-top: 18px;
+            text-align: center;
+        }
+
+        /* Loading Spinner */
+        .loading-spinner {
+            border: 4px solid #333; /* Dark grey base for spinner */
+            border-top: 4px solid #00aaff; /* Blue top for animation */
+            border-radius: 50%;
+            width: 24px; /* Slightly larger spinner */
+            height: 24px;
+            animation: spin 1s linear infinite;
+            display: inline-block;
+            vertical-align: middle;
+            margin-left: 15px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .button-container {
+            display: flex;
+            align-items: center;
+            gap: 15px; /* Space between button and spinner */
+            justify-content: center; /* Center buttons and spinner */
+            flex-wrap: wrap; /* Allow wrapping on small screens */
+        }
+
+        /* Specific styles for generic content pages */
+        .content-section {
+            margin-top: 40px;
+            padding: 25px;
+            border: 1px solid #008800;
+            border-radius: 10px;
+            background-color: #222222;
+            box-shadow: 0 0 15px rgba(0, 255, 0, 0.2);
+            text-align: left; /* Default text alignment for content */
+        }
+        .content-section h2 {
+            text-align: center;
+            border-bottom: 2px solid #00ff00;
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+        }
+        .content-section p, .content-section ul, .content-section ol {
+            color: #eee; /* Lighter text for readability in content sections */
+            margin-bottom: 1em;
+            font-size: 1.05em;
+        }
+        .content-section ul, .content-section ol {
+            padding-left: 25px;
+        }
+        .content-section li {
+            margin-bottom: 0.5em;
+            color: #00ff00; /* Green bullets/numbers */
+        }
+        .content-section strong {
+            color: #00ffff; /* Cyan for strong text */
+            text-shadow: 0 0 5px rgba(0, 255, 255, 0.4);
+        }
+        /* Add to your existing <style> block */
+
+/* Media Query for smaller screens (e.g., phones in portrait mode) */
+@media (max-width: 768px) {
+    body {
+        margin: 20px auto; /* Reduce overall margin */
+        padding: 15px; /* Reduce overall padding */
+        border-radius: 8px; /* Slightly smaller border-radius */
+        box-shadow: 0 0 15px rgba(0, 255, 0, 0.3); /* Adjust shadow intensity */
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack nav items vertically on small screens */
+        gap: 10px; /* Reduce gap between stacked nav items */
+    }
+
+    nav ul li a {
+        font-size: 1em; /* Slightly smaller font for nav links */
+        padding: 10px; /* Adjust padding for nav links */
+    }
+
+    h1 {
+        font-size: 2em; /* Smaller main heading */
+        margin-bottom: 25px;
+    }
+
+    h2 {
+        font-size: 1.5em; /* Smaller sub-headings */
+        margin-bottom: 20px;
+    }
+
+    .content-section {
+        padding: 15px; /* Reduce padding inside content sections */
+        border-radius: 8px;
+    }
+
+    .content-section p, .content-section ul, .content-section ol {
+        font-size: 0.95em; /* Slightly smaller text for content */
+    }
+
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form textarea {
+        font-size: 0.9em; /* Adjust input font size */
+        padding: 10px;
+    }
+
+    button {
+        padding: 12px 20px; /* Adjust button size */
+        font-size: 1.1em;
+    }
+}
+
+/* You might want another breakpoint for very small phones */
+@media (max-width: 480px) {
+    body {
+        margin: 15px auto;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    h2 {
+        font-size: 1.3em;
+    }
+
+    nav ul li a {
+        font-size: 0.9em;
+        padding: 8px;
+    }
+
+    .content-section {
+        padding: 10px;
+    }
+}
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/">Steganography Module</a></li>
+            <li><a href="/how-it-works.html">Protocol Overview</a></li>
+            <li><a href="/about-us.html" class="active">About CipherGuard</a></li>
+            <li><a href="/contact.html">Contact Operations</a></li>
+        </ul>
+    </nav>
+
+    <h1>CipherGuard About Our Mission</h1>
+
+    <div class="content-section">
+        <h2>Our Directive</h2>
+        <p>CipherGuard was initiated by a collective of cybersecurity architects and privacy advocates. Our core directive is to provide advanced, accessible tools for secure and discreet information transfer. In an increasingly transparent digital landscape, the need for robust methods to protect sensitive communications is paramount.</p>
+        
+        <h2>Our Philosophy</h2>
+        <ul>
+            <li><strong>Empowerment:</strong> Equipping individuals and organizations with the means to control their digital privacy.</li>
+            <li><strong>Innovation:</strong> Continuously researching and integrating cutting-edge steganographic and cryptographic techniques.</li>
+            <li><strong>Integrity:</strong> Committing to the highest standards of data security and user trust.</li>
+            <li><strong>Accessibility:</strong> Designing intuitive interfaces that make complex security protocols manageable for all users.</li>
+        </ul>
+
+        <h2>The Team</h2>
+        <p>Our team comprises experts in cryptography, image processing, network security, and user experience design. We believe in the power of open-source principles and continuous improvement, driven by the evolving challenges of digital espionage and data interception.</p>
+        <p>CipherGuard is more than just a tool; it's a commitment to a future where digital communication can remain private and protected.</p>
+    </div>
+
+    <script>
+        // Function to set the active link in the navbar
+        function setActiveNavLink() {
+            const path = window.location.pathname; // E.g., "/", "/how-it-works.html", "/about-us.html", "/contact.html"
+            const navLinks = document.querySelectorAll('nav ul li a');
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                const linkHref = link.getAttribute('href'); // E.g., "/", "/how-it-works.html", "/about-us.html", "/contact.html"
+
+                // Check if the link's href exactly matches the current path.
+                // This handles both the root path ('/') and specific page paths (e.g., '/about-us.html').
+                if (linkHref === path) {
+                    link.classList.add('active');
+                }
+            });
+        }
+
+        // Call the function when the page loads
+        document.addEventListener('DOMContentLoaded', setActiveNavLink);
+    </script>
+</body>
+</html>
