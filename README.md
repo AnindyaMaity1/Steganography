@@ -1,6 +1,7 @@
 # CipherGuard: Secure Covert Communication 🛡️
 
-![CipherGuard Icon Placeholder](https://via.placeholder.com/150/1a1a1a/00ff00?text=CipherGuard+Icon)
+![image](https://github.com/user-attachments/assets/c68775ef-0c8b-47f6-8df2-8910454e8c24)
+
 
 ---
 
@@ -86,7 +87,7 @@ This project is licensed under the **MIT License** - see the `LICENSE` file for 
 For any questions or collaborations, reach out to:
 
 * **Email** - [officialanindyamaity@gmail.com](mailto:officialanindyamaity@gmail.com)
-* 
+
 ---
 
 **CipherGuard: Your Digital Secrecy, Our Priority.**
