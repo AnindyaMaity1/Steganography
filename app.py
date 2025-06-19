@@ -301,4 +301,4 @@ def extract():
 
 if __name__ == '__main__':
     # When deploying, set debug=False and use a production-ready WSGI server like Gunicorn or uWSGI
-    app.run(debug=True, host='0.0.0.0') # Listen on all available IPs
+    app.run()
